@@ -1,0 +1,86 @@
+Anleitung: Natürliche Sprache → SQL-Abfrage (Projekt-Setup, sachlich)
+
+So würde ich es einem Vorgesetzten sachlich beschreiben (anhand der Logik aus gradio_app.py)
+
+1) Eingang: Nutzer stellt eine Frage in natürlicher Sprache
+- UI nimmt die Frage entgegen (Textbox/Chat).
+- Ziel: „Was will der Nutzer wissen?“ wird als klarer Text an das Backend übergeben.
+
+2) “Table Infos” bereitstellen (Schlüssel für NL→SQL)
+Damit ein Modell valide SQL erzeugen kann, muss es wissen:
+- Welche Tabellen/Views gibt es?
+- Welche Spalten heißen wie und welchen Datentyp haben sie?
+- Wie hängen Tabellen zusammen (Join-Pfade / Keys)?
+- Welche Business-Begriffe entsprechen welchen Feldern (Glossar/Synonyme)?
+
+In gradio_app.py ist das als SQL_TABLE_INFO statisch im Code hinterlegt (DDL‑ähnlicher String). In einem echten Unternehmensprojekt wird das so umgesetzt:
+
+Option A (kleiner Start, am schnellsten): kuratierte Views + handgeschriebene Table-Infos
+- Man erstellt 5–20 “certified” Views (z.B. vw_sales_daily, vw_customers_active).
+- Für diese Views erstellt man eine kurze Schema-Beschreibung (Spalten, Meaning, Beispielwerte).
+- Vorteil: schnell, stabil, wenig Risiko.
+- Nachteil: nicht “alles” abgedeckt.
+
+Option B (skalierbar): automatisch aus Datenkatalog/Information Schema
+- Man zieht Metadaten automatisiert aus INFORMATION_SCHEMA / Systemkatalog:
+  - Tabellen/Views, Spalten, Datentypen, Constraints, Fremdschlüssel
+- Zusätzlich ergänzt man Business-Definitionen aus einem Data Catalog (z.B. Purview/Collibra).
+- Vorteil: skaliert auf große DBs.
+- Nachteil: ohne Kuratierung ist es “zu viel” und semantisch oft unklar.
+
+Option C (Best Practice): Semantik-/Metrics-Layer
+- Man definiert Measures/Dimensions (“Umsatz”, “Marge”, “aktive Kunden”) zentral.
+- NL→SQL erfolgt gegen diesen Layer, nicht gegen Rohschema.
+- Vorteil: konsistente Zahlen, weniger Fehlinterpretationen.
+
+3) Tabellen/Spalten auswählen (Retrieval statt „alles in den Prompt“)
+- Bei großen Schemas kann man nicht jede Tabelle in den Prompt packen.
+- Vorgehen:
+  - Index über Metadaten (Tabellenbeschreibungen, Spaltennamen, Glossar, Beispielqueries)
+  - Für eine Frage werden nur die relevanten Tabellen/Spalten herausgesucht und an das Modell gegeben.
+- Das ist das Prinzip hinter „RAG für Tabelleninfos“.
+
+4) SQL generieren (LLM-Schritt)
+- Input: Nutzerfrage + ausgewählte Table-Infos + Regeln (nur read-only).
+- Output: ein SQL-Query (z.B. SELECT ... FROM ... WHERE ... GROUP BY ...).
+
+5) SQL validieren und absichern (Pflicht im Unternehmen)
+Bevor die DB angefasst wird:
+- Nur SELECT/WITH ... SELECT erlauben (keine INSERT/UPDATE/DELETE/DDL).
+- LIMIT/TOP erzwingen, Zeitfilter bei großen Fact-Tabellen.
+- Allowlist für Schemas/Views, Blocklist für sensitive Tabellen.
+- Timeouts / max runtime / max rows.
+
+6) SQL ausführen (read-only) und Ergebnisse holen
+- Ausführung über einen read-only Service-Account.
+- Idealerweise auf Read-Replica / Warehouse, nicht auf dem OLTP-Primärsystem.
+- Ergebnis wird als Tabelle zurückgegeben.
+
+7) Antwort generieren + Transparenz
+- System liefert:
+  - generiertes SQL (für Nachvollziehbarkeit),
+  - Resultset (oder Aggregat),
+  - textliche Antwort.
+- Das erhöht Vertrauen und hilft beim Debugging.
+
+8) Betrieb: Monitoring/Audit/Evaluation
+- Logging: Frage, SQL, Laufzeit, Rowcount, Fehler (datenschutzkonform).
+- Evaluation: Gold-Fragen + Regressionstests bei Schemaänderungen.
+- Rollen/Rechte: RLS/PII-Regeln, Auditing.
+
+Wie macht man Table Infos konkret?
+Pragmatische Umsetzung in 3 Stufen:
+
+Stufe 1 (Pilot, 1–2 Wochen)
+- 10 wichtigste Fragen + 5–10 Views identifizieren.
+- Für jede View: DDL + kurze Beschreibung + Beispielqueries.
+- Entspricht SQL_TABLE_INFO, aber als kuratierter “Semantikblock”.
+
+Stufe 2 (Skalierung)
+- Automatischer Export aus Katalog/INFORMATION_SCHEMA.
+- Aufbau eines Metadaten-Indexes (für Retrieval).
+- Synonymliste/Glossar ergänzen („Umsatz“ → net_revenue).
+
+Stufe 3 (Industrie-reif)
+- Semantik-/Metrics-Layer, Zugriff nur über “certified” Objekte.
+- Strenge SQL-Policy + Audit + Testset + Rollout/Feature Flags.
