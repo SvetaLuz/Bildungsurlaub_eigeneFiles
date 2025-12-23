@@ -1,0 +1,77 @@
+Genre;Beschreibung;E-Gitarre;Synthesizer;Klavier;Orchester;Schlagzeug;Drum Machine;Tempo (norm.);Gesang (klar=1);Harmonik (0=einfach, 1=komplex);Energie (0=niedrig, 1=hoch)
+Rock;Prägend sind E-Gitarren, Schlagzeug und kraftvoller Gesang. Texte handeln oft von Rebellion oder Alltag.;1;0;0;0;1;0;0.7;1;0.3;0.8
+Synthie-Pop;Elektronische Popmusik mit Synthesizern und Drum Machines. Texte sind oft futuristisch oder abstrakt.;0;1;0;0;0;1;0.65;1;0.2;0.7
+Classic;Orchesterbasierte Musik mit komplexen Harmonien und klaren Melodien. Oft instrumental.;0;0;1;1;0;0;0.3;1;0.9;0.4
+Metal;Verzerrte E-Gitarren, schnelle Rhythmen und aggressive Vocals. Themen sind oft dunkel oder gesellschaftskritisch.;1;0;0;0;1;0;0.85;0;0.8;0.9
+Techno;Elektronische Tanzmusik mit repetitiven Beats und Synthesizer-Sounds. Meist instrumental.;0;1;0;0;0;1;0.75;0;0.1;0.9
+Jazz;Improvisation, komplexe Harmonien und akustische Instrumente wie Klavier oder Saxophon.;0;0;1;0;1;0;0.5;1;0.8;0.6
+Folk;Akustische Instrumente wie Gitarre oder Geige. Texte erzählen oft Geschichten oder handeln von Natur.;0;0;0;0;0;0;0.4;1;0.2;0.3
+Hip-Hop;Rhythmischer Sprechgesang über Beats. Texte sind oft sozialkritisch oder biografisch.;0;0;0;0;0;1;0.6;1;0.4;0.7
+Dark Ambient;Düstere, atmosphärische Klanglandschaften mit Synthesizern und Field Recordings. Meist instrumental.;0;1;0;0;0;0;0.2;0;0.5;0.2
+Pop;Eingängige Melodien, klare Gesangslinien und oft elektronische Instrumente. Texte handeln von Liebe oder Alltag.;0;1;0;0;1;0;0.6;1;0.1;0.7
+Indie-Rock;Gitarrenlastiger Rock mit DIY-Ästhetik und experimentellen Einflüssen.;1;0;0;0;1;0;0.65;1;0.4;0.7
+Punk;Schnelle, aggressive Musik mit einfachen Akkorden und politischen Texten.;1;0;0;0;1;0;0.8;0;0.2;0.9
+Blues;Akustische oder E-Gitarre mit 12-taktigen Strukturen. Texte handeln von Leid oder Hoffnung.;1;0;0;0;0;0;0.4;1;0.3;0.5
+Reggae;Entspannte Rhythmen, Offbeat-Gitarren und Texte über soziale Gerechtigkeit oder Liebe.;1;0;0;0;1;0;0.5;1;0.2;0.5
+Electronic;Elektronisch erzeugte Klänge, oft tanzbar und ohne traditionelle Songstrukturen.;0;1;0;0;0;1;0.7;0;0.3;0.8
+Country;Akustische Gitarren, Geigen und Texte über ländliches Leben oder Liebe.;1;0;0;0;1;0;0.5;1;0.2;0.4
+R&B;Soulvolle Vocals, rhythmische Beats und Texte über Beziehungen oder Emotionen.;0;0;1;0;0;1;0.55;1;0.4;0.6
+Funk;Groovige Basslinien, Bläser und tanzbare Rhythmen.;1;1;1;0;1;0;0.65;1;0.5;0.8
+Disco;Tanzbare Beats, Orchesterelemente und glitzernde Vocals.;0;1;1;1;1;1;0.7;1;0.2;0.8
+House;Elektronische Tanzmusik mit gleichmäßigen Beats und Synthesizer-Melodien.;0;1;0;0;0;1;0.7;0;0.2;0.8
+Trance;Uplifting-Synthesizer, repetitive Beats und euphorische Melodien.;0;1;0;0;0;1;0.75;0;0.3;0.9
+Dubstep;Schwere Bässe, synkopierte Rhythmen und elektronische Sounds.;0;1;0;0;0;1;0.6;0;0.4;0.9
+Classical;Komplexe, orchestrale Kompositionen mit klaren Strukturen. Meist instrumental.;0;0;1;1;0;0;0.3;1;0.9;0.3
+Flamenco;Akustische Gitarren, Gesangsjauchzer und rhythmisches Klatschen. Texte handeln von Leidenschaft.;1;0;0;0;1;0;0.55;1;0.6;0.7
+Soul;Emotionale Vocals, Bläser und rhythmische Grooves. Texte über Liebe oder soziales Unrecht.;0;0;1;0;1;0;0.5;1;0.5;0.6
+Grunge;Verzerrte Gitarren, rohe Vocals und düstere Texte.;1;0;0;0;1;0;0.6;0;0.5;0.8
+Drum and Bass;Schnelle Breaks, tiefe Bässe und elektronische Klänge.;0;1;0;0;1;1;0.8;0;0.4;0.9
+Ambient;Atmosphärische Klangteppiche mit Synthesizern oder natürlichen Klängen. Meist instrumental.;0;1;0;0;0;0;0.2;0;0.3;0.2
+K-Pop;Eingängige Popmusik mit elektronischen Elementen und aufwendigen Choreografien.;0;1;0;0;1;1;0.65;1;0.2;0.8
+Gothic;Dunkle, melancholische Musik mit Synthesizern und tiefen Vocals.;0;1;0;0;1;0;0.4;1;0.6;0.5
+Ska;Schnelle Offbeat-Rhythmen, Bläser und heitere Texte.;1;0;0;0;1;0;0.7;1;0.3;0.7
+New Wave;Synthesizer, E-Gitarren und experimentelle Songstrukturen. Texte oft futuristisch.;1;1;0;0;1;1;0.65;1;0.5;0.7
+Progressive Rock;Komplexe Songstrukturen, lange Instrumentalpassagen und konzeptuelle Texte.;1;1;1;0;1;0;0.5;1;0.8;0.7
+Chiptune;Musik aus alten Computern oder Spielkonsolen, oft 8-Bit-Sounds.;0;1;0;0;0;1;0.7;0;0.1;0.6
+Bossa Nova;Akustische Gitarren, sanfte Rhythmen und Texte über Liebe oder Natur.;1;0;0;0;1;0;0.45;1;0.3;0.4
+Death Metal;Extrem verzerrte Gitarren, Growls und düstere Texte.;1;0;0;0;1;0;0.9;0;0.8;0.95
+Trip-Hop;Langsame Beats, atmosphärische Samples und düstere Vocals.;0;1;0;0;0;1;0.4;1;0.6;0.5
+Bluegrass;Akustische Instrumente wie Banjo oder Mandoline. Texte über ländliches Leben.;1;0;0;0;0;0;0.5;1;0.3;0.5
+Salsa;Lateinamerikanische Rhythmen, Bläser und tanzbare Grooves.;0;0;1;0;1;0;0.7;1;0.4;0.8
+Industrial;Mechanische Klänge, verzerrte Vocals und düstere Atmosphäre.;0;1;0;0;1;1;0.6;0;0.7;0.8
+Lo-Fi;Entspannte Beats mit Rauschen oder Vinyl-Knistern. Oft instrumental.;0;1;0;0;0;1;0.5;0;0.2;0.3
+Post-Rock;Instrumentale, atmosphärische Musik mit komplexen Arrangements.;1;1;1;0;1;0;0.4;0;0.7;0.6
+Reggaeton;Lateinamerikanische Beats, Synthesizer und Texte über Partys oder Beziehungen.;0;1;0;0;0;1;0.65;1;0.2;0.8
+Baroque;Komplexe, kontrapunktische Kompositionen mit Cembalo oder Orgel.;0;0;1;1;0;0;0.3;1;0.9;0.3
+Psytrance;Schnelle Beats, hypnotische Synthesizer und repetitive Strukturen.;0;1;0;0;0;1;0.8;0;0.4;0.9
+Emo;Emotionale Texte, verzerrte Gitarren und melodische Vocals.;1;0;0;0;1;0;0.6;1;0.5;0.7
+Funk Metal;Mischung aus Funk-Grooves und Metal-Gitarren.;1;0;0;0;1;0;0.7;1;0.6;0.8
+Downtempo;Langsame elektronische Beats mit entspannten Melodien.;0;1;0;0;0;1;0.4;0;0.3;0.4
+Hardcore;Extrem schnelle Beats, aggressive Vocals und politische Texte.;1;0;0;0;1;0;0.9;0;0.4;0.95
+Shoegaze;Verzerrte Gitarren, atmosphärische Vocals und traumhafte Klanglandschaften.;1;1;0;0;1;0;0.5;1;0.6;0.6
+Dub;Echoeffekte, tiefe Bässe und entspannte Rhythmen. Oft instrumental.;0;1;0;0;1;0;0.45;0;0.3;0.5
+Nu-Metal;Mischung aus Metal und Hip-Hop mit DJ-Elementen.;1;1;0;0;1;1;0.65;1;0.5;0.8
+Folk-Rock;Akustische Gitarren und Rock-Elemente. Texte über Gesellschaft oder Natur.;1;0;0;0;1;0;0.55;1;0.4;0.6
+Breakbeat;Schnelle, synkopierte Beats und elektronische Samples.;0;1;0;0;0;1;0.7;0;0.4;0.8
+Vaporwave;Verlangsamte Samples aus den 80ern/90ern, oft mit Synthesizern.;0;1;0;0;0;1;0.4;0;0.2;0.3
+Math Rock;Komplexe Rhythmen, ungerade Taktarten und experimentelle Songstrukturen.;1;0;0;0;1;0;0.6;1;0.8;0.7
+Krautrock;Experimentelle, repetitive Strukturen mit Synthesizern und hypnotischen Grooves.;1;1;1;0;1;0;0.5;1;0.7;0.6
+Grime;UK-basierte elektronische Musik mit schnellen Beats und aggressiven Vocals.;0;1;0;0;0;1;0.7;1;0.4;0.8
+Post-Punk;Dunkle, atmosphärische Musik mit E-Gitarren und melancholischen Vocals.;1;1;0;0;1;0;0.55;1;0.6;0.6
+Chillwave;Entspannte elektronische Musik mit 80er-Jahre-Synthesizern.;0;1;0;0;0;1;0.5;1;0.3;0.4
+Speed Metal;Extrem schnelle Gitarrenriffs und aggressive Vocals.;1;0;0;0;1;0;0.9;0;0.7;0.9
+Afrobeat;Afrikanische Rhythmen, Bläser und politische Texte.;1;0;1;0;1;0;0.65;1;0.5;0.7
+Glitch;Elektronische Musik mit absichtlichen Störgeräuschen oder "Glitches".;0;1;0;0;0;1;0.6;0;0.5;0.7
+Neo-Soul;Moderne Soul-Musik mit Jazz- und Hip-Hop-Einflüssen.;0;0;1;0;1;1;0.5;1;0.6;0.6
+Black Metal;Verzerrte Gitarren, schrille Vocals und düstere Atmosphäre.;1;0;0;0;1;0;0.8;0;0.8;0.9
+Smooth Jazz;Entspannte Jazz-Musik mit klaren Melodien und sanften Rhythmen.;0;0;1;0;1;0;0.45;1;0.5;0.4
+Power Metal;Melodische Gitarren, hohe Vocals und epische Texte.;1;0;0;0;1;0;0.8;1;0.6;0.8
+UK Garage;UK-basierte elektronische Musik mit schnellen Beats und Soul-Vocals.;0;1;0;0;0;1;0.65;1;0.3;0.7
+Experimental;Unkonventionelle Klänge, Strukturen und oft improvisiert.;0;1;1;1;1;1;0.5;0;0.9;0.6
+Skate Punk;Schnelle, aggressive Musik mit einfachen Akkorden und rebellischen Texten.;1;0;0;0;1;0;0.8;0;0.2;0.9
+World Music;Traditionelle Instrumente und Rhythmen aus verschiedenen Kulturen.;0;0;0;1;1;0;0.5;1;0.7;0.5
+Minimal Techno;Reduzierte elektronische Beats mit repetitiven Strukturen.;0;1;0;0;0;1;0.65;0;0.1;0.7
+Surf Rock;E-Gitarren mit Reverb-Effekten und tanzbare Rhythmen.;1;0;0;0;1;0;0.7;1;0.2;0.7
+Darkwave;Dunkle, melancholische elektronische Musik mit Synthesizern.;0;1;0;0;0;1;0.5;1;0.6;0.5
+Trap;Schwere Bässe, schnelle Hi-Hats und oft düstere Texte.;0;1;0;0;0;1;0.6;1;0.3;0.8
+Art Rock;Experimentelle Rock-Musik mit künstlerischen Einflüssen.;1;1;1;0;1;0;0.5;1;0.8;0.6
